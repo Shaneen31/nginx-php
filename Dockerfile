@@ -20,7 +20,7 @@ COPY config/php.ini /etc/php7/conf.d/zzz_custom.ini
 # Configure supervisord
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# Add application directory
+# Create application directory and set workdir
 RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
 
