@@ -24,7 +24,7 @@ COPY files/php/phpinfo.php /var/www/app/index.php
 COPY files/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY files/services.d /etc/services.d
 
-EXPOSE 80
+EXPOSE 80 9000
 
 #ENTRYPOINT ["/bin/s6-svscan", "/etc/services.d"]
 CMD ["nginx", "-g", "daemon off;"]
