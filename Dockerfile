@@ -22,9 +22,6 @@ RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
 #COPY src/ /var/www/html/
 
-# Add Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --filename=/usr/local/bin/composer
-
 EXPOSE 80 443
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
