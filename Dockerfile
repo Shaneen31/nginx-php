@@ -5,7 +5,11 @@ MAINTAINER Shaneen31
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
 # Install packages
-RUN apk --no-cache add nginx wget curl git ca-certificates ssmtp php7 php7-fpm php7-common php7-phar php7-curl php7-json php7-timezonedb php7-zlib php7-xml php7-dom php7-ctype php7-opcache php7-mysqli php7-zip php7-iconv php7-pdo php7-pdo_mysql php7-pdo_sqlite php7-pdo_pgsql php7-mbstring php7-session php7-mcrypt php7-openssl php7-sockets php7-posix php7-ldap php7-gd supervisor
+RUN apk --no-cache add nginx wget curl git ca-certificates ssmtp && \
+    apk --no-cache add php7 php7-fpm php7-common php7-phar php7-opcache php7-curl php7-json php7-timezonedb php7-xml && \
+    apk --no-cache add php7-dom php7-ctype php7-mysqli php7-zip php7-zlib php7-iconv php7-pdo php7-pdo_mysql && \
+    apk --no-cache add php7-pdo_sqlite php7-pdo_pgsql php7-mbstring php7-session php7-mcrypt php7-openssl && \
+    apk --no-cache add php7-sockets php7-mysqlnd php7-posix php7-ldap php7-gd supervisor
 
 #Install composer
 #RUN curl -sS https://getcomposer.org/installer | php7 -- --filename=/usr/local/bin/composer
